@@ -94,7 +94,7 @@ const Aside = () => {
                   dispatch(
                     setOpenGalleryModel({
                       status: true,
-                      data: { kind: "villa-200-299" },
+                      data: { kind: "villa-200-295" },
                     })
                   )
                 }
