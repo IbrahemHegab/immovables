@@ -18,7 +18,7 @@ const OurProjects = () => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.gallery);
   const [selectedType, setSelectedType] = useState(""); // لتخزين نوع العقار المختار
-  // لتخزين نوع العقار المختار
+ // لتخزين نوع العقار المختار
   const [selectedRooms, setSelectedRooms] = useState(""); // لتخزين عدد الغرف المختار
   const [selectedShow] = useState(true); // لتخزين المساحة المختارة
   const [selectedHall, setSelectedHall] = useState(""); // لتخزين المساحة المختارة
@@ -29,6 +29,7 @@ const OurProjects = () => {
   };
   const filteredData = data.filter((e) => {
     return (
+      (selectedAll === "all" ? e : "") &&
       (!selectedType || e.kind === selectedType) &&
       (!selectedRooms || e.rooms === Number(selectedRooms)) &&
       (!selectedHall || e.hall === Number(selectedHall)) &&
@@ -119,7 +120,7 @@ const OurProjects = () => {
             color="warning"
             onClick={() => resetFilters()}
           >
-            كل الوحدات
+            الكل
           </Button>
           <div className="border rounded-lg border-gray-400">
             <Dropdown

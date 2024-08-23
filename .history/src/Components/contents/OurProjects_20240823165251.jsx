@@ -18,7 +18,7 @@ const OurProjects = () => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.gallery);
   const [selectedType, setSelectedType] = useState(""); // لتخزين نوع العقار المختار
-  // لتخزين نوع العقار المختار
+  const [selectedAll, setSelectedAll] = useState(""); // لتخزين نوع العقار المختار
   const [selectedRooms, setSelectedRooms] = useState(""); // لتخزين عدد الغرف المختار
   const [selectedShow] = useState(true); // لتخزين المساحة المختارة
   const [selectedHall, setSelectedHall] = useState(""); // لتخزين المساحة المختارة
@@ -29,6 +29,7 @@ const OurProjects = () => {
   };
   const filteredData = data.filter((e) => {
     return (
+      (selectedAll === "all" ? e : "") &&
       (!selectedType || e.kind === selectedType) &&
       (!selectedRooms || e.rooms === Number(selectedRooms)) &&
       (!selectedHall || e.hall === Number(selectedHall)) &&
@@ -38,11 +39,11 @@ const OurProjects = () => {
     );
   });
   const resetFilters = () => {
-    setSelectedType(""); // إعادة تعيين نوع العقار
+    setSelectedType("");  // إعادة تعيين نوع العقار
     setSelectedRooms(""); // إعادة تعيين عدد الغرف
-    setSelectedHall(""); // إعادة تعيين عدد الصالات
-    setMinPrice(""); // إعادة تعيين السعر الأدنى
-    setMaxPrice(""); // إعادة تعيين السعر الأقصى
+    setSelectedHall("");  // إعادة تعيين عدد الصالات
+    setMinPrice("");      // إعادة تعيين السعر الأدنى
+    setMaxPrice("");      // إعادة تعيين السعر الأقصى
   };
 
   useEffect(() => {
@@ -117,9 +118,9 @@ const OurProjects = () => {
           <Button
             className="mx-2 items-center"
             color="warning"
-            onClick={() => resetFilters()}
+            onClick={() =>resetFilters()}
           >
-            كل الوحدات
+            الكل
           </Button>
           <div className="border rounded-lg border-gray-400">
             <Dropdown

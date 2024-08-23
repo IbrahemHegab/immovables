@@ -1,6 +1,6 @@
 import { useState } from "react";
 import room from "../../assets/available/image10.jpg";
-import { Button, Dropdown } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 import { TbToolsKitchen3 } from "react-icons/tb";
 import { MdHolidayVillage, MdMeetingRoom } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,7 +18,6 @@ const OurProjects = () => {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.gallery);
   const [selectedType, setSelectedType] = useState(""); // لتخزين نوع العقار المختار
-  // لتخزين نوع العقار المختار
   const [selectedRooms, setSelectedRooms] = useState(""); // لتخزين عدد الغرف المختار
   const [selectedShow] = useState(true); // لتخزين المساحة المختارة
   const [selectedHall, setSelectedHall] = useState(""); // لتخزين المساحة المختارة
@@ -29,6 +28,7 @@ const OurProjects = () => {
   };
   const filteredData = data.filter((e) => {
     return (
+      (! selectedType|| e.kind === selectedType) &&
       (!selectedType || e.kind === selectedType) &&
       (!selectedRooms || e.rooms === Number(selectedRooms)) &&
       (!selectedHall || e.hall === Number(selectedHall)) &&
@@ -37,14 +37,6 @@ const OurProjects = () => {
       (!maxPrice || e.price <= Number(maxPrice))
     );
   });
-  const resetFilters = () => {
-    setSelectedType(""); // إعادة تعيين نوع العقار
-    setSelectedRooms(""); // إعادة تعيين عدد الغرف
-    setSelectedHall(""); // إعادة تعيين عدد الصالات
-    setMinPrice(""); // إعادة تعيين السعر الأدنى
-    setMaxPrice(""); // إعادة تعيين السعر الأقصى
-  };
-
   useEffect(() => {
     dispatch(getGallery());
   }, [dispatch]);
@@ -113,14 +105,7 @@ const OurProjects = () => {
             مشاريعنا
           </h1>
         </div>
-        <div className="grid lg:grid-cols-6 grid-cols-2 sm:grid-cols-2 gap-3 justify-center pb-5 lg:pb-6">
-          <Button
-            className="mx-2 items-center"
-            color="warning"
-            onClick={() => resetFilters()}
-          >
-            كل الوحدات
-          </Button>
+        <div className="grid lg:grid-cols-5 grid-cols-2 sm:grid-cols-2 gap-3 justify-center pb-5 lg:pb-6">
           <div className="border rounded-lg border-gray-400">
             <Dropdown
               color={"transparent"}
@@ -319,7 +304,7 @@ const OurProjects = () => {
                           </ul>
                         </div>
                         <span
-                          onClick={() => handelDetails(e)}
+                         onClick={() => handelDetails(e)}
                           className="w-full block text-white text-center bg-yellow-500 py-2 text-sm xl:text-base hover:bg-primary-300"
                         >
                           إضغط لتفاصيل أكثر
