@@ -9,8 +9,7 @@ import "./carousel.css";
 import { Autoplay } from "swiper/modules";
 import { NavLink } from "react-router-dom";
 import Slider from "./Slider";
-import { MdPriceChange } from "react-icons/md";
-import { GiResize } from "react-icons/gi";
+import { MdHolidayVillage, } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { getGallery } from "../../store/Gallerys/gallerySlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -252,7 +251,7 @@ const Blogs = () => {
                           </div>
                           <div className="grid grid-cols-3 content-between text-center border rounded">
                             <span>
-                              <MdPriceChange className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
+                              <MdHolidayVillage className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
                               {e.price} <small>ريال</small>
                             </span>
                             <Button
