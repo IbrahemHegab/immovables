@@ -30,9 +30,7 @@ export function DetaildModel() {
       <Modal
         show={DetailsModel.status}
         size={"2xl"}
-        onClose={() => {
-            dispatch(setOpenDetailsModel(false));
-          }}
+       
         className="z-50"
       >
         <Modal.Header></Modal.Header>
@@ -176,16 +174,16 @@ export function DetaildModel() {
           <Button
             className="mx-2"
             color="red"
-            onClick={() => {
-              dispatch(setOpenDetailsModel(false));
-            }}
+           
           >
             اغلاق
           </Button>
           <Button
             className="mx-2 items-center"
             color="red"
-           
+            onClick={() => {
+                dispatch(setOpenDetailsModel(false));
+              }}
           >
             <FaHeart color="red" className="inline-block mx-1 md:mx-0.5 w-5 " />
           </Button>
