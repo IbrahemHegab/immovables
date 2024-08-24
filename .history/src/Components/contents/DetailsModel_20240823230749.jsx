@@ -176,16 +176,16 @@ export function DetaildModel() {
           <Button
             className="mx-2"
             color="red"
-            onClick={() => {
-              dispatch(setOpenDetailsModel(false));
-            }}
+           
           >
             اغلاق
           </Button>
           <Button
             className="mx-2 items-center"
             color="red"
-           
+            onClick={() => {
+                dispatch(setOpenDetailsModel(false));
+              }}
           >
             <FaHeart color="red" className="inline-block mx-1 md:mx-0.5 w-5 " />
           </Button>

@@ -176,9 +176,7 @@ export function DetaildModel() {
           <Button
             className="mx-2"
             color="red"
-            onClick={() => {
-              dispatch(setOpenDetailsModel(false));
-            }}
+           
           >
             اغلاق
           </Button>
