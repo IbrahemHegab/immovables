@@ -97,7 +97,7 @@ const Blogs = () => {
               },
               640: {
                 slidesPerView: 1,
-                spaceBetween: 40,
+                spaceBetween: 40
               },
               768: {
                 slidesPerView: 2,
@@ -111,6 +111,7 @@ const Blogs = () => {
                 slidesPerView: 3,
                 spaceBetween: 10,
               },
+            
             }}
             dir="rtl"
             initialSlide={0}
@@ -242,7 +243,10 @@ const Blogs = () => {
                             <div className="flex items-center justify-between p-3 md:p-2 lg:p-3">
                               <h3 className="font-ge-dinar-medium text-xl xl:text-[1.6rem] text-secondary-800 dark:text-secondary-200">
                                 <IoHome className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
-                                <span className="text-xl">فيلا الموافقة</span>
+                                <span className="text-xl">
+                               ف
+                                  الموافقة
+                                </span>
                               </h3>
                             </div>
                           </div>
@@ -259,7 +263,7 @@ const Blogs = () => {
                               <FaHeart className="inline-block mx-1 md:mx-0.5 w-5 " />
                             </Button>
                             <span>
-                              <GiResize className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
+                              <GiResize  className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
                               {e.area} <small>متر </small>
                             </span>
                           </div>

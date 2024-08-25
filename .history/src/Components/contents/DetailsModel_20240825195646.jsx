@@ -164,7 +164,7 @@ export function DetaildModel() {
                           </span>
                         </li>
                         <li className="p-2">
-                          <IoHome className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
+                          <GrElevator className="inline-block mx-1 md:mx-0.5 w-5 text-black" />
                           <span className="text-sm">النوع:</span>
                           <span className="text-orange-500">
                           {DetailsModel.data?.kind === "apartment" ? "شقة" : "فيلا"}
