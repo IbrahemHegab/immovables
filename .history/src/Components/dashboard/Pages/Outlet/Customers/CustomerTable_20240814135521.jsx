@@ -12,14 +12,12 @@ import { getEmployees } from "../../../../store/Employees/employeesSlice";
 
 const CustomerTable = () => {
   const dispatch = useDispatch();
-  const { customer, employees } = useSelector((state) => state);
+  const { customer, employees ,auth } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(getCustomer());
-    dispatch(getEmployees({ supervisor: "مشرف", marketer: "مسوق" }));
+    dispatch(getEmployees({ supervisor: "مشرف", marketer: "مسوق" , token:auth.token }));
   }, [dispatch]);
-  console.log(employees);
-
   const handleDelete = (id) => {
     fireSwal("هل أنت متأكد من حذف العميل؟", "", async () => {
       await dispatch(deleteCustomer(id));

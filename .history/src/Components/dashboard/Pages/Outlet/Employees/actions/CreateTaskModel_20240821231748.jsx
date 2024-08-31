@@ -4,6 +4,7 @@ import { setOpenEmployeesModel } from "../../../../../store/SharedStore";
 import { Field, Form, Formik } from "formik";
 import { useState } from "react";
 import { createEmployees } from "../../../../../store/Employees/employeesSlice";
+import { FormValid } from "../../../../../../../../src/Components/utils/FormValidation";
 
 const CreateTaskModel = () => {
   const initstate = {
@@ -26,7 +27,7 @@ const CreateTaskModel = () => {
       <Formik
         initialValues={initstate}
         onSubmit={submit}
-        validationSchema={galleryFormValid}
+        validationSchema={FormValid}
         validateOnBlur={true}
         validateOnChange={true}
       >
