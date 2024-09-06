@@ -68,7 +68,6 @@ const Dashboard = () => {
             </div>
             <div className="flex items-center">
               <div className="flex items-center ms-3">
-              <span>{user?.name}</span>
                 <div className="flex">
                   <Dropdown
                     label={
@@ -119,7 +118,6 @@ const Dashboard = () => {
                       الذهاب الي المهمات
                     </Dropdown.Item>
                   </Dropdown>
-                  
                   <div className="flex flex-col justify-center items-center">
                     <div className="relative">
                       <img
@@ -128,8 +126,8 @@ const Dashboard = () => {
                         src={preson}
                         alt="user photo"
                       />
-                      <span className="absolute top-0 bg-green-600 rounded-full w-5 h-5 text-gray-50 flex items-center justify-center text-xs" style={{ right:"-5px"}}>
-                       {user?.notifications.length}
+                      <span className="absolute bg-green-600 rounded-full w-5 h-5 text-gray-50 flex items-center justify-center text-xs" style={{top:"-5px" , right:"-5px"}}>
+                        10
                       </span>
                     </div>
 

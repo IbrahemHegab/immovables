@@ -33,6 +33,7 @@ const CustomerTable = () => {
   const handleUpdate = (id) => {
     dispatch(setOpenCustomerModelUpdate({ data: id, status: true }));
   };
+  console.log(customer.data[1].marketers);
   
   return (
     <div className="overflow-x-scroll xl:w-auto lg:w-auto md:w-auto w-screen h-screen">

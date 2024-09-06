@@ -33,7 +33,7 @@ const CustomerTable = () => {
   const handleUpdate = (id) => {
     dispatch(setOpenCustomerModelUpdate({ data: id, status: true }));
   };
-  
+  log
   return (
     <div className="overflow-x-scroll xl:w-auto lg:w-auto md:w-auto w-screen h-screen">
       <Table dir="rtl">

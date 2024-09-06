@@ -3,7 +3,7 @@ import preson from "../../assets/available/preson.png";
 import OutletDashboard from "./Pages/Home/Outlet";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpenSideBar } from "../store/SharedStore";
-import { Dropdown } from "flowbite-react";
+import { Avatar, Dropdown } from "flowbite-react";
 import { NavLink } from "react-router-dom";
 import {
   deleteNotifcation,
@@ -68,7 +68,6 @@ const Dashboard = () => {
             </div>
             <div className="flex items-center">
               <div className="flex items-center ms-3">
-              <span>{user?.name}</span>
                 <div className="flex">
                   <Dropdown
                     label={
@@ -119,21 +118,15 @@ const Dashboard = () => {
                       الذهاب الي المهمات
                     </Dropdown.Item>
                   </Dropdown>
-                  
                   <div className="flex flex-col justify-center items-center">
-                    <div className="relative">
-                      <img
-                        className="rounded-full"
-                        style={{ width: "60px", height: "60px" }}
-                        src={preson}
-                        alt="user photo"
-                      />
-                      <span className="absolute top-0 bg-green-600 rounded-full w-5 h-5 text-gray-50 flex items-center justify-center text-xs" style={{ right:"-5px"}}>
-                       {user?.notifications.length}
-                      </span>
-                    </div>
-
-                   
+                    {/* <img
+                      className="rounded-full"
+                      style={{ width: "40px", height: "40px" }}
+                      src={preson}
+                      alt="user photo"
+                    /> */}
+                     <Avatar img={preson} rounded status="10" statusPosition="top-right" />
+                    <span>{user?.name}</span>
                   </div>
                 </div>
               </div>

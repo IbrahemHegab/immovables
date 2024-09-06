@@ -148,7 +148,7 @@ const TasksTable = () => {
           <Table.Body className="divide-y text-center">
             {task.isLoading ? (
               <Table.Row>
-                <Table.Cell colSpan="12">
+                <Table.Cell colSpan="7">
                   جاري تحميل البيانات...{" "}
                   <Spinner aria-label="Default status example" />
                 </Table.Cell>
