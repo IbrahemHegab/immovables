@@ -79,8 +79,7 @@ export const createTask = createAsyncThunk(
 export const updateTask = createAsyncThunk(
   "task/updateTask",
   async (args, thunkApi) => {
-    console.log(args);
-    
+    مخل
     try {
       const { data } = await axiosInstance.put(`${url}/task/${args.id}`, args, {
         headers: {

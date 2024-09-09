@@ -78,7 +78,7 @@
   overflow-x: auto; /* إظهار التمرير عند التمرير فوق الخلية */
 }
 .scrollable-cell::-webkit-scrollbar {
-  height: 5px; /* ارتفاع شريط التمرير الأفقي */
+  height: 8px; /* ارتفاع شريط التمرير الأفقي */
   background-color: #f1f1f1; /* لون الخلفية */
 }
 

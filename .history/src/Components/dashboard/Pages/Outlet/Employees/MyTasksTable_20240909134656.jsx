@@ -75,27 +75,22 @@ const TasksTable = () => {
       : [];
 
   const handleTaskStatus = (e) => {
-    dispatch(
-      setOpenNoteTaskModelUpdate({ data: e, status: true, dataType: "review" })
-    );
+    dispatch(setOpenNoteTaskModelUpdate({ data: e, status: true }));
+    // dispatch(updateTask({ id: e._id, status: "review" })).then(() =>
+    //   dispatch(completeTask(e._id))
+    // );
   };
   const handleTaskRejected = (e) => {
-    dispatch(
-      setOpenNoteTaskModelUpdate({
-        data: e,
-        status: true,
-        dataType: "rejected",
-      })
-    );
+    dispatch(setOpenNoteTaskModelUpdate({ data: e, status: true }));
+    // dispatch(updateTask({ id: e._id, status: "rejected" })).then(() =>
+    //   dispatch(rejectedTask(e._id))
+    // );
   };
   const handleTaskFulfilled = (e) => {
-    dispatch(
-      setOpenNoteTaskModelUpdate({
-        data: e,
-        status: true,
-        dataType: "fulfilled",
-      })
-    );
+    dispatch(setOpenNoteTaskModelUpdate({ data: e, status: true }));
+    // dispatch(updateTask({ id: e._id, status: "fulfilled" })).then(() =>
+    //   dispatch(fulfilledTask(e._id))
+    // );
   };
   useEffect(() => {
     if (task.data?.length > 0) {
@@ -219,9 +214,9 @@ const TasksTable = () => {
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     {e?.show || "لم يتم العرض"}
                   </Table.Cell>
-                  <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 scrollable-cell">
-  {e?.taskNotes || "غير متوفر"}
-</Table.Cell>
+                  <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 ">
+                    {e?.taskNotes || "غير متوفر"}
+                  </Table.Cell>
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     <Swiper
                       slidesPerView={1}

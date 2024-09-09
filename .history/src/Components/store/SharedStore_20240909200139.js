@@ -47,7 +47,6 @@ const SharedModel = createSlice({
     setOpenNoteTaskModelUpdate(state, action) {
       state.UpdateNoteTaskModel.status = action.payload.status;
       state.UpdateNoteTaskModel.data = action.payload.data;
-      state.UpdateNoteTaskModel.dataType = action.payload.dataType;
     },
     setOpenDetailsModel(state, action) {
       state.DetailsModel.status = action.payload.status;

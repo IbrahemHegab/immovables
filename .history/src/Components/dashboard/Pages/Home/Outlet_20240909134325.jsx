@@ -9,7 +9,6 @@ import UpdateModalCustomer from "../Outlet/Customers/actions/UpdateModalCustomer
 import UpdateModalEmployees from "../Outlet/Employees/actions/UpdateModalEmployees";
 import CreateTaskModel from "../Outlet/Employees/actions/CreateTaskModel";
 import UpdatePermissionModal from "../Outlet/Permissions/actions/UpdatePermissionModal";
-import UpdateNoteTask from "../Outlet/Employees/actions/updateNoteTask";
 
 const OutletDashboard = () => {
   return (
@@ -33,7 +32,6 @@ const OutletDashboard = () => {
       <CreateModalEmployees />
       <UpdateModalEmployees />
       <CreateTaskModel />
-      <UpdateNoteTask/>
     </div>
   );
 };

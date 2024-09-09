@@ -219,9 +219,24 @@ const TasksTable = () => {
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     {e?.show || "لم يتم العرض"}
                   </Table.Cell>
-                  <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 scrollable-cell">
-  {e?.taskNotes || "غير متوفر"}
-</Table.Cell>
+                  {/* <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 ">
+                    {e?.taskNotes || "غير متوفر"}
+                  </Table.Cell> */}
+                  <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
+      {e?.taskNotes && e?.taskNotes.length > MAX_LENGTH ? (
+        <>
+          {showMore ? e?.taskNotes : `${e?.taskNotes.substring(0, MAX_LENGTH)}...`}
+          <span 
+            className="text-blue-500 cursor-pointer"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? " See Less" : " See More"}
+          </span>
+        </>
+      ) : (
+        taskNotes || "غير متوفر"
+      )}
+    </Table.Cell>
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     <Swiper
                       slidesPerView={1}

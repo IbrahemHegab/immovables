@@ -33,7 +33,7 @@ const OutletDashboard = () => {
       <CreateModalEmployees />
       <UpdateModalEmployees />
       <CreateTaskModel />
-      <UpdateNoteTask/>
+      <UpdateNoteTask
     </div>
   );
 };

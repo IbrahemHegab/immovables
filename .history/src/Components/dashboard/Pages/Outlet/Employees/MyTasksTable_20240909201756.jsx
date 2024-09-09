@@ -219,9 +219,10 @@ const TasksTable = () => {
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     {e?.show || "لم يتم العرض"}
                   </Table.Cell>
-                  <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 scrollable-cell">
-  {e?.taskNotes || "غير متوفر"}
-</Table.Cell>
+                  {/* <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1 ">
+                    {e?.taskNotes || "غير متوفر"}
+                  </Table.Cell> */}
+                  
                   <Table.Cell className="lg:p-5 md:p-2 sm:p-0 p-1">
                     <Swiper
                       slidesPerView={1}

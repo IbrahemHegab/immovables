@@ -67,8 +67,8 @@
   justify-content: center;
 }
 .scrollable-cell {
-  max-width: 180px; /* العرض الأقصى للخلية */
-   /* العرض الأقصى للخلية */
+  max-width: 100px; /* العرض الأقصى للخلية */
+  max-height: 100px; /* العرض الأقصى للخلية */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* لإظهار "..." في نهاية النص إذا تجاوز المحتوى المساحة */
@@ -78,7 +78,7 @@
   overflow-x: auto; /* إظهار التمرير عند التمرير فوق الخلية */
 }
 .scrollable-cell::-webkit-scrollbar {
-  height: 5px; /* ارتفاع شريط التمرير الأفقي */
+  height: 8px; /* ارتفاع شريط التمرير الأفقي */
   background-color: #f1f1f1; /* لون الخلفية */
 }
 

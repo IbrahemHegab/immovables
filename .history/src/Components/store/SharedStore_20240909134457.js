@@ -6,7 +6,7 @@ const initialState = {
   UpdateGalleryModel: { status: false, data: null },
   EmployeesModel: false,
   UpdateEmployeesModel: { status: false, data: null },
-  UpdateNoteTaskModel: { status: false, data: null , dataType:null },
+  UpdateNoteTaskModel: { status: false, data: null },
   TaskModel: { status: false, data: null },
   DetailsModel: { status: false, data: null },
   PermissionModel: { create: false, update: false, data: null },
@@ -44,10 +44,9 @@ const SharedModel = createSlice({
       state.UpdateEmployeesModel.status = action.payload.status;
       state.UpdateEmployeesModel.data = action.payload.data;
     },
-    setOpenNoteTaskModelUpdate(state, action) {
-      state.UpdateNoteTaskModel.status = action.payload.status;
-      state.UpdateNoteTaskModel.data = action.payload.data;
-      state.UpdateNoteTaskModel.dataType = action.payload.dataType;
+    setOpenEmployeesModelUpdate(state, action) {
+      state.UpdateEmployeesModel.status = action.payload.status;
+      state.UpdateEmployeesModel.data = action.payload.data;
     },
     setOpenDetailsModel(state, action) {
       state.DetailsModel.status = action.payload.status;
@@ -84,6 +83,5 @@ export const {
   setOpenTaskModel,
   setOpenDetailsModel,
   setOpenToast,
-  setTaskID,
-  setOpenNoteTaskModelUpdate
+  setTaskID
 } = SharedModel.actions;
