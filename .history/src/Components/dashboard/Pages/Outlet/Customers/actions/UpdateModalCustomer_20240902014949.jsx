@@ -1,0 +1,1 @@
+selected._id === marketer._id
